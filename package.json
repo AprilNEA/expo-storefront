@@ -24,13 +24,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acceleai/expo-storefront.git"
+    "url": "git+https://github.com/AprilNEA/expo-storefront.git"
   },
   "bugs": {
-    "url": "https://github.com/acceleai/expo-storefront/issues"
+    "url": "https://github.com/AprilNEA/expo-storefront/issues"
   },
-  "homepage": "https://github.com/acceleai/expo-storefront#readme",
-  "author": "AcceleAI",
+  "homepage": "https://github.com/AprilNEA/expo-storefront#readme",
+  "author": "AprilNEA <dev@aprilnea.me>",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -54,5 +54,8 @@
     "expo-modules-core": "^3.0.0",
     "react": "~19.1.0",
     "typescript": "~5.9.2"
+  },
+  "dependencies": {
+    "iso-3166-1-ts": "^0.2.2"
   }
 }
