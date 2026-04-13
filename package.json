@@ -1,0 +1,58 @@
+{
+  "name": "expo-storefront",
+  "version": "0.1.0",
+  "description": "Read the user's App Store storefront (Apple ID billing region) via StoreKit 2 from Expo / React Native.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rm -rf build",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "expo",
+    "expo-module",
+    "react-native",
+    "storekit",
+    "storefront",
+    "app-store",
+    "ios",
+    "localization",
+    "region"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acceleai/expo-storefront.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acceleai/expo-storefront/issues"
+  },
+  "homepage": "https://github.com/acceleai/expo-storefront#readme",
+  "author": "AcceleAI",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "files": [
+    "build",
+    "src",
+    "ios",
+    "expo-module.config.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.0",
+    "expo-modules-core": "^3.0.0",
+    "react": "~19.1.0",
+    "typescript": "~5.9.2"
+  }
+}

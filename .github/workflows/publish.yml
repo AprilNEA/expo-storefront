@@ -1,0 +1,51 @@
+name: Publish to npm
+
+# Triggers on a published GitHub Release. The release tag should match the
+# version in package.json (e.g. `v0.1.0`).
+#
+# Uses npm Trusted Publishing via OIDC — no NPM_TOKEN needed.
+# Before the first publish, configure the trusted publisher at
+#   https://www.npmjs.com/settings/<user-or-org>/packages
+# pointing to this repository and this workflow file.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  # Required for OIDC token + provenance attestation.
+  id-token: write
+
+jobs:
+  publish:
+    name: Build & publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      # Trusted Publishing requires npm >= 11.5.1 (shipped in mid-2025).
+      - name: Upgrade npm
+        run: npm install -g npm@latest
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish
+        # `--provenance` is implied by publishConfig.provenance in package.json
+        # but pass explicitly so it's obvious from CI logs.
+        run: npm publish --provenance
