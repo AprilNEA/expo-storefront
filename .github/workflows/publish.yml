@@ -46,6 +46,7 @@ jobs:
         run: npm run build
 
       - name: Publish
-        # `--provenance` is implied by publishConfig.provenance in package.json
-        # but pass explicitly so it's obvious from CI logs.
+        # `--provenance` generates the OIDC attestation. Only valid on a
+        # supported CI provider, so it's kept here rather than in
+        # publishConfig (which would break local `npm publish`).
         run: npm publish --provenance
