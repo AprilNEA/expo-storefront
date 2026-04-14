@@ -11,7 +11,7 @@ This is **not** the same as the device locale (`expo-localization`), SIM country
 ## Install
 
 ```sh
-npx expo install expo-storefront
+npx expo install @aprilnea/expo-storefront
 ```
 
 Requires Expo SDK 50+ (uses the `NativeModule` subclass pattern).
@@ -23,7 +23,7 @@ import {
   useStorefront,
   getCurrentStorefront,
   addStorefrontChangeListener,
-} from "expo-storefront";
+} from "@aprilnea/expo-storefront";
 
 // Hook — three explicit states instead of null-vs-real ambiguity
 function PriceTag() {

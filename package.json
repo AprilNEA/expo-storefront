@@ -1,5 +1,5 @@
 {
-  "name": "expo-storefront",
+  "name": "@aprilnea/expo-storefront",
   "version": "0.1.0",
   "description": "Read the user's App Store storefront (Apple ID billing region) via StoreKit 2 from Expo / React Native.",
   "main": "build/index.js",
